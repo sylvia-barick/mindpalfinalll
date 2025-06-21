@@ -53,15 +53,15 @@ export const Footer: React.FC = () => {
             <ul className="space-y-2">
               <li className="flex items-center space-x-2 text-neural-400">
                 <Mail className="h-4 w-4" />
-                <span>contact@mindpal.ai</span>
+                <span>mindpal2025@gmail.com</span>
               </li>
               <li className="flex items-center space-x-2 text-neural-400">
                 <Phone className="h-4 w-4" />
-                <span>+1 (555) 123-4567</span>
+                <span>+91 62902 77345</span>
               </li>
               <li className="flex items-center space-x-2 text-neural-400">
                 <MapPin className="h-4 w-4" />
-                <span>Boston, MA</span>
+                <span>Institute of Engineering and Management, Salt Lake, Kolkata</span>
               </li>
             </ul>
           </div>

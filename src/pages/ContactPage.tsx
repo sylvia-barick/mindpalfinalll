@@ -43,19 +43,19 @@ export const ContactPage: React.FC = () => {
     {
       icon: Mail,
       label: 'Email',
-      value: 'contact@mindpal.ai',
+      value: 'mindpal2025@gmail.com',
       href: 'mailto:contact@mindpal.ai'
     },
     {
       icon: Phone,
       label: 'Phone',
-      value: '+1 (555) 123-4567',
+      value: '+91 62902 77345',
       href: 'tel:+15551234567'
     },
     {
       icon: MapPin,
       label: 'Location',
-      value: 'Boston, MA',
+      value: 'Institute of Engineering and Management, Salt Lake, Kolkata',
       href: '#'
     }
   ];
@@ -367,61 +367,7 @@ export const ContactPage: React.FC = () => {
           </motion.div>
         </div>
 
-        {/* Team Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="mb-16"
-        >
-          <h2 className="text-3xl font-bold text-center mb-12">
-            Meet Our Clinical Team
-          </h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {teamMembers.map((member, index) => (
-              <div key={member.name} className="bg-neural-800/50 rounded-2xl overflow-hidden border border-neural-700 hover:border-teal-400/50 transition-all duration-300">
-                <div className="aspect-square relative">
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-1">{member.name}</h3>
-                  <p className="text-teal-400 text-sm mb-2">{member.role}</p>
-                  <p className="text-neural-400 text-sm">{member.specialty}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Partner Logos */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="text-center mb-16"
-        >
-          <h3 className="text-xl font-semibold mb-8 text-neural-400">
-            Trusted by Leading Institutions
-          </h3>
-          
-          <div className="flex flex-wrap items-center justify-center gap-8">
-            {partnerLogos.map((partner) => (
-              <div
-                key={partner.name}
-                className="bg-neural-800/50 rounded-xl px-6 py-4 border border-neural-700 hover:border-teal-400/50 transition-all duration-300"
-              >
-                <div className="text-lg font-bold text-teal-400">{partner.logo}</div>
-                <div className="text-xs text-neural-400 mt-1">{partner.name}</div>
-              </div>
-            ))}
-          </div>
-        </motion.div>
+        
 
         {/* Call to Action */}
         <motion.div
