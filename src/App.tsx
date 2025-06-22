@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
+
 import { HomePage } from './pages/HomePage';
 import { DiagnosticPage } from './pages/DiagnosticPage';
 import { TherapyArenaPage } from './pages/TherapyArenaPage';
@@ -14,11 +16,23 @@ import SortSenseGame from './pages/SortSenseGame';
 import AttentionSpanBuilder from './pages/AttentionSpanBuilder';
 import VRTherapyReports from './pages/report';
 
+import VideoLoader from './components/videoloader';
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000); // Show video for 6 seconds
+    return () => clearTimeout(timeout);
+  }, []);
+
+  if (isLoading) return <VideoLoader onComplete={() => setIsLoading(false)} />;
+
   return (
     <Router>
-      <div className="min-h-screen bg-neural-950 text-white">
+      <div className="min-h-screen bg-neutral-950 text-white">
         <Header />
         <main>
           <Routes>
@@ -33,7 +47,6 @@ function App() {
             <Route path="/sort-sense" element={<SortSenseGame />} />
             <Route path="/attention-span" element={<AttentionSpanBuilder />} />
             <Route path="/reports" element={<VRTherapyReports />} />
-            
           </Routes>
         </main>
         <Footer />

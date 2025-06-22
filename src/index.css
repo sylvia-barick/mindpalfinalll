@@ -145,3 +145,9 @@
   position: relative;
   z-index: 50;
 }
+
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
