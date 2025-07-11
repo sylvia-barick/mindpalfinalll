@@ -17,18 +17,27 @@ import AttentionSpanBuilder from './pages/AttentionSpanBuilder';
 import VRTherapyReports from './pages/report';
 
 import VideoLoader from './components/videoloader';
+import LandingPage from './pages/LandingPage';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
+  const [showLanding, setShowLanding] = useState(false);
 
   useEffect(() => {
     const timeout = setTimeout(() => {
       setIsLoading(false);
-    }, 2000); // Show video for 6 seconds
+      setShowLanding(true);
+    }, 2000);
     return () => clearTimeout(timeout);
   }, []);
 
   if (isLoading) return <VideoLoader onComplete={() => setIsLoading(false)} />;
+
+  if (showLanding) {
+    return (
+      <LandingPage onContinue={() => setShowLanding(false)} />
+    );
+  }
 
   return (
     <Router>
